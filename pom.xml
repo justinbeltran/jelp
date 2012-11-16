@@ -6,8 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-	
-		<!--  Test  -->
+
+		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
