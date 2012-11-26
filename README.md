@@ -28,5 +28,4 @@ System.out.println("Total results: " + results.getTotal());
 
 Business business = jelp.business("rolling-sushi-van-irvine");
 System.out.println(business.getName());
-
 ```
