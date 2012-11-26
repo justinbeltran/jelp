@@ -1,5 +1,5 @@
 language: java
+script: mvn -q clean install
 jdk:
-  - openjdk7
-  - oraclejdk7
   - openjdk6
+  - oraclejdk7
