@@ -18,14 +18,14 @@ import org.scribe.oauth.OAuthService;
  */
 public class Api {
 
+	private static final String SEARCH_URL = "http://api.yelp.com/v2/search";
+	private static final String BASE_BUSINESS_URL = "http://api.yelp.com/v2/business";
+
 	private OAuthService oauthService;
 	private Token token;
-	private String searchUrl = "http://api.yelp.com/v2/search";
 
-	public Api(String consumerKey, String consumerSecret, String token,
-			String tokenSecret) {
-		this.oauthService = new ServiceBuilder().provider(YelpV2Provider.class)
-				.apiKey(consumerKey).apiSecret(consumerSecret).build();
+	public Api(String consumerKey, String consumerSecret, String token, String tokenSecret) {
+		this.oauthService = new ServiceBuilder().provider(YelpV2Provider.class).apiKey(consumerKey).apiSecret(consumerSecret).build();
 		this.token = new Token(token, tokenSecret);
 	}
 
@@ -37,10 +37,22 @@ public class Api {
 	 * @return
 	 */
 	public Response search(String searchTerm, String location) {
-		OAuthRequest request = new OAuthRequest(Verb.GET, searchUrl);
+		OAuthRequest request = new OAuthRequest(Verb.GET, SEARCH_URL);
 		request.addQuerystringParameter("term", searchTerm);
 		request.addQuerystringParameter("location", location);
+		oauthService.signRequest(token, request);
+		return request.send();
+	}
 
+	/**
+	 * Returns info for a business with a specific id
+	 * 
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Response business(String id) {
+		OAuthRequest request = new OAuthRequest(Verb.GET, BASE_BUSINESS_URL + "/" + id);
 		oauthService.signRequest(token, request);
 		return request.send();
 	}

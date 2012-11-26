@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.scribe.model.Response;
 
+import com.justinbeltran.jelp.model.Business;
 import com.justinbeltran.jelp.model.Results;
 
 public class JelpTest extends BaseTest {
@@ -20,31 +21,53 @@ public class JelpTest extends BaseTest {
 	private Api api;
 
 	@InjectMocks
-	private Jelp jelp = new Jelp("consumerKey", "consumerSecret", "tokenKey",
-			"tokenSecret");
+	private Jelp jelp = new Jelp("consumerKey", "consumerSecret", "tokenKey", "tokenSecret");
 
 	@Test
 	public void search() throws Exception {
 
 		Response resp = mock(Response.class);
-		when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(
-				resp);
-		
+		when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+
 		when(resp.isSuccessful()).thenReturn(true);
-		
+
 		String exampleResponse = IOUtils.toString(this.getClass().getResourceAsStream("/example_search_result.json"));
 		when(resp.getBody()).thenReturn(exampleResponse);
 
 		Results results = jelp.search("sushi", "Irvine, CA");
 		assertThat(results.getTotal(), is(176));
 	}
-	
+
 	@Test(expected = IllegalArgumentException.class)
-	public void search_unsuccessful(){
+	public void search_unsuccessful() {
 		Response resp = mock(Response.class);
-		when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(
-				resp);
-		
+		when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+
+		when(resp.isSuccessful()).thenReturn(false);
+
+		jelp.search("sushi", "Irvine, CA");
+	}
+
+	@Test
+	public void business() throws Exception {
+
+		Response resp = mock(Response.class);
+		when(api.business(Mockito.anyString())).thenReturn(resp);
+
+		when(resp.isSuccessful()).thenReturn(true);
+
+		String exampleResponse = IOUtils.toString(this.getClass().getResourceAsStream("/example_business.json"));
+		when(resp.getBody()).thenReturn(exampleResponse);
+
+		Business business = jelp.business("yelp-san-francisco");
+		assertThat(business.getDisplay_phone(), is("+1-415-677-9744"));
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void business_unsuccessful() {
+		Response resp = mock(Response.class);
+		when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+
 		when(resp.isSuccessful()).thenReturn(false);
 
 		jelp.search("sushi", "Irvine, CA");

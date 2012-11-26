@@ -25,4 +25,8 @@ Jelp jelp = new Jelp(consumerKey, consumerSecret, tokenKey, tokenSecret);
 
 Results results = jelp.search("sushi", "Irvine, CA");
 System.out.println("Total results: " + results.getTotal());
+
+Business business = jelp.business("rolling-sushi-van-irvine");
+System.out.println(business.getName());
+
 ```
