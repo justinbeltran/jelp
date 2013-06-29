@@ -5,8 +5,8 @@ import org.mockito.MockitoAnnotations;
 
 public class BaseTest {
 
-	@Before
-	public void before() {
-		MockitoAnnotations.initMocks(this);
-	}
+    @Before
+    public void before() {
+        MockitoAnnotations.initMocks(this);
+    }
 }

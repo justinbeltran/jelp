@@ -12,19 +12,19 @@ import org.scribe.model.Token;
  */
 public class YelpV2Provider extends DefaultApi10a {
 
-	@Override
-	public String getRequestTokenEndpoint() {
-		return null;
-	}
+    @Override
+    public String getRequestTokenEndpoint() {
+        return null;
+    }
 
-	@Override
-	public String getAccessTokenEndpoint() {
-		return null;
-	}
+    @Override
+    public String getAccessTokenEndpoint() {
+        return null;
+    }
 
-	@Override
-	public String getAuthorizationUrl(Token requestToken) {
-		return null;
-	}
+    @Override
+    public String getAuthorizationUrl(Token requestToken) {
+        return null;
+    }
 
 }
