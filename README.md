@@ -3,7 +3,7 @@ Jelp
 
 [![Build Status](https://secure.travis-ci.org/justinbeltran/jelp.png)](http://travis-ci.org/justinbeltran/jelp)
 
-Jelp is a Yelp v2 API Wrapper written in Java. It's mostly based on the already existing example on Yelp's github page [https://github.com/Yelp/yelp-api/blob/master/v2/java/Yelp.java]([https://github.com/Yelp/yelp-api/blob/master/v2/java/Yelp.java]).
+Jelp is a Yelp v2 API Wrapper written in Java. It's mostly based on the already existing [Java example on Yelp's github page](https://github.com/Yelp/yelp-api/blob/master/v2/java/Yelp.java).
 
 Prereqs
 -------
