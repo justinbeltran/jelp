@@ -1,13 +1,13 @@
 {
     "categories": [
-        [
-            "Indian",
-            "indpak"
-        ],
-        [
-            "Pakistani",
-            "pakistani"
-        ]
+        {
+            "alias": "indpak",
+            "title": "Indian"
+        },
+        {
+            "alias": "pakistani",
+            "title": "Pakistani"
+        }
     ],
     "deals": [
         {
