@@ -25,14 +25,14 @@
             "snippet_text": "Customer service is always friendly. The food is great. The tuna chips are very delicious with a great spice to them. My friends have eaten off this truck a...",
             "image_url": "http://s3-media2.ak.yelpcdn.com/bphoto/Y3e0hHcndqsjnaTnh5Hfjw/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Food Stands",
-                    "foodstands"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "foodstands",
+                    "title": "Food Stands"
+                }
             ],
             "display_phone": "+1-626-905-7248",
             "rating_img_url_large": "http://s3-media2.ak.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/stars_large_4_half.png",
@@ -68,14 +68,14 @@
             "snippet_text": "yaay for my new regular sushi spot!\n consistently fresh and muy delicioso\n\nSea Bass A+\nSpanish Mackerel A-\nAlbacore A+++ like toro\nUni B+\n\nLOVE the Lobster...",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/RhH3rLDnSH-2iRDTX0yXXg/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-748-1896",
             "rating_img_url_large": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/stars_large_4.png",
@@ -114,14 +114,14 @@
             "snippet_text": "I visit this place every time I'm in the O.C.\n\nThe sushi bar is the best experience when you are drinking sake with the chefs.",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/StcQN9762_s4PrB21PERVw/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-559-7190",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -162,14 +162,14 @@
             "snippet_text": "I love this place!!!  It's just up the road from my house, and it's DE-LISH!!! I like the fact that everyone who works here is extremely friendly and...",
             "image_url": "http://s3-media2.ak.yelpcdn.com/bphoto/u56cLFPR1ALT1KtFuaXMvA/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-857-8030",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -210,14 +210,14 @@
             "snippet_text": "This was a nice surprise. I was in the area for the first time in a few years, and had originally decided to stop by Taiko, which I remember fondly from my...",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/tYG_7D49scNondBz4lxE6w/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-714-505-0008",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -258,14 +258,14 @@
             "snippet_text": "Good food, but spendy.  The ladies here are gorgeous enough to fill up a cup or two; if you know what I mean. \n\n In case you drink too much, you can head on...",
             "image_url": "http://s3-media2.ak.yelpcdn.com/bphoto/6HorWhHcaiMl3LCS2jdsFw/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-263-0000",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -306,14 +306,14 @@
             "snippet_text": "I remember WAY WAY back when Wasa Sushi opened... I was a fan from GO! \n\nRecently, my family and I enjoyed lunch at Wasa, to discover that my favorite sushi...",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/3qF-Ewq_DAUyQq7kKUpPNw/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-714-665-3338",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -352,10 +352,10 @@
             "snippet_text": "Although like everyone else, I am bummed that the Irvine Fire Authority couldn't be more accommodating to portable butane stoves and also that the owner did...",
             "image_url": "http://s3-media1.ak.yelpcdn.com/bphoto/FNYERIX-OSmzMASQBiq-Sw/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-714-544-2800",
             "rating_img_url_large": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/stars_large_4.png",
@@ -396,14 +396,14 @@
             "snippet_text": "phenominal sushi with sashimi the size of a small steak!! seriously never seen a cut of sushi like it and though it is pricey it is worth it. I'll continue...",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/WS9m2PyYTV3pzNfZNCplQg/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-551-6802",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -444,10 +444,10 @@
             "snippet_text": "Tried this out for the first time. I just wanted a snack so I went to pads sushi. I just decided to go with the regular to give them a try.\n\nNot bad at all...",
             "image_url": "http://s3-media1.ak.yelpcdn.com/bphoto/JiyuD8Z5OuFdOPOS3oMPUQ/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-476-1922",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -486,14 +486,14 @@
             "snippet_text": "I eat a lot of sushi, if you know what I mean.\n\nAnd I mean I eat a lot of sushi. I've been to a lot of mediocre places, a few good, but this place is GREAT....",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/08zvK0U23PoRG3r0shoE7g/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-756-8875",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -534,10 +534,10 @@
             "snippet_text": "I'm still coming here about once a week, it's still very good for a lunch bite. \n\nVery friendly staff in the Marriott tradition of warm hospitality.  \n\nChef...",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/-sonQ22ad_diGAsGiTAimA/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-553-0100",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -578,14 +578,14 @@
             "snippet_text": "When this place first opened up, I found myself shocked.  Shocked on just how damn good this sushi was!  The sushi here is delicious and at a great price....",
             "image_url": "http://s3-media2.ak.yelpcdn.com/bphoto/vKFjy04cJjjHf5qcAYQQhg/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-553-0747",
             "rating_img_url_large": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/stars_large_3_half.png",
@@ -626,14 +626,14 @@
             "snippet_text": "I really like Ippo. It's slightly more expensive than I'd like, but it's the best nearby and only sushi place that delivers to me. Plus you can order Red...",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/iZPY2WXtk2mqhzXsHVLDMw/ms.jpg",
             "categories": [
-                [
-                    "Food Delivery Services",
-                    "fooddeliveryservices"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "fooddeliveryservices",
+                    "title": "Food Delivery Services"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-484-9213",
             "rating_img_url_large": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/stars_large_4.png",
@@ -669,14 +669,14 @@
             "snippet_text": "Great place to come for happy hour!\n\nHalf off sushi rolls, 99 cent sake, $4 Sapporo. Various appetizers were also half off. \n\nThe food was good. If you get...",
             "image_url": "http://s3-media3.ak.yelpcdn.com/bphoto/GJ6gnoCPgkLRqapnOJhwMw/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-786-9888",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
@@ -715,14 +715,14 @@
             "snippet_text": "Is it the best sushi on the planet?  No.  Will it squash an acute sushi craving in a hurry?  Totally.  I try to make excuses to be in the neighborhood of a...",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/3frjGNqCEywhxkMnJMcr_g/ms.jpg",
             "categories": [
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ],
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-788-0828",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
@@ -761,14 +761,14 @@
             "snippet_text": "good place for all you can eat shabu shabu which also includes all you can eat sushi.  There's sometimes a wait, and you have to watch the signin to make...",
             "image_url": "http://s3-media1.ak.yelpcdn.com/bphoto/exzcAljQGtIluer0jtOfPw/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-654-9400",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
@@ -807,14 +807,14 @@
             "snippet_text": "I recently discovered Sushi Boy cause my friend was craving a california roll and a spicy tuna roll. I picked some up and I thought the price was pretty...",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/WZ2_WTYLxBlPMpSjpyVYLQ/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-654-8111",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
@@ -853,10 +853,10 @@
             "snippet_text": "I've been coming here for about 4 years now and although I cringe from the smell of sushi restaurants (that oily, fishy smell), the quality of food and the...",
             "image_url": "http://s3-media1.ak.yelpcdn.com/bphoto/su2IpPUdz5FTLGwKAhPxPA/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
             ],
             "display_phone": "+1-949-551-3599",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
@@ -897,14 +897,14 @@
             "snippet_text": "I have been coming here for several years and always have a pretty good experience. I go back because it's our neighborhood spot for sushi. It's casual and...",
             "image_url": "http://s3-media4.ak.yelpcdn.com/bphoto/jwazxaC4f6lyUfoh3QcAsA/ms.jpg",
             "categories": [
-                [
-                    "Japanese",
-                    "japanese"
-                ],
-                [
-                    "Sushi Bars",
-                    "sushi"
-                ]
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
             ],
             "display_phone": "+1-949-748-3970",
             "rating_img_url_large": "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/stars_large_3.png",
