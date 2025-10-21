@@ -1,22 +1,19 @@
 package com.justinbeltran.jelp.model;
 
-public class Region {
-    private Center center;
-    private Span span;
+/**
+ * Represents a geographic region with center point and span
+ *
+ * @param center The center coordinates of the region
+ * @param span The span (dimensions) of the region
+ */
+public record Region(Center center, Span span) {
 
+    // Backward compatibility getters
     public Center getCenter() {
-        return this.center;
-    }
-
-    public void setCenter(Center center) {
-        this.center = center;
+        return center;
     }
 
     public Span getSpan() {
-        return this.span;
-    }
-
-    public void setSpan(Span span) {
-        this.span = span;
+        return span;
     }
 }

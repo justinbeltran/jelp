@@ -1,31 +1,24 @@
 package com.justinbeltran.jelp.model;
 
-public class User {
-    private String id;
-    private String image_url;
-    private String name;
+/**
+ * Represents a Yelp user (reviewer)
+ *
+ * @param id The user's unique identifier
+ * @param image_url URL to the user's profile image
+ * @param name The user's display name
+ */
+public record User(String id, String image_url, String name) {
 
+    // Backward compatibility getters
     public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        return id;
     }
 
     public String getImage_url() {
-        return this.image_url;
-    }
-
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+        return image_url;
     }
 
     public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return name;
     }
 }

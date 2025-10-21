@@ -1,19 +1,18 @@
 package com.justinbeltran.jelp;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 import org.apache.commons.io.IOUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.scribe.model.Response;
 
 import com.justinbeltran.jelp.model.Business;
 import com.justinbeltran.jelp.model.Results;
+
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 
 public class JelpTest extends BaseTest {
 
@@ -21,55 +20,67 @@ public class JelpTest extends BaseTest {
     private Api api;
 
     @InjectMocks
-    private Jelp jelp = new Jelp("consumerKey", "consumerSecret", "tokenKey", "tokenSecret");
+    private Jelp jelp = new Jelp("test-api-key");
 
     @Test
     public void search() throws Exception {
+        @SuppressWarnings("unchecked")
+        HttpResponse<String> resp = mock(HttpResponse.class);
+        when(api.search(anyString(), anyString())).thenReturn(resp);
 
-        Response resp = mock(Response.class);
-        when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+        when(resp.statusCode()).thenReturn(200);
 
-        when(resp.isSuccessful()).thenReturn(true);
-
-        String exampleResponse = IOUtils.toString(this.getClass().getResourceAsStream("/example_search_result.json"));
-        when(resp.getBody()).thenReturn(exampleResponse);
+        String exampleResponse = IOUtils.toString(
+                this.getClass().getResourceAsStream("/example_search_result.json"),
+                StandardCharsets.UTF_8);
+        when(resp.body()).thenReturn(exampleResponse);
 
         Results results = jelp.search("sushi", "Irvine, CA");
-        assertThat(results.getTotal(), is(176));
+        assertEquals(176, results.getTotal());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void search_unsuccessful() {
-        Response resp = mock(Response.class);
-        when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+    @Test
+    public void search_unsuccessful() throws Exception {
+        @SuppressWarnings("unchecked")
+        HttpResponse<String> resp = mock(HttpResponse.class);
+        when(api.search(anyString(), anyString())).thenReturn(resp);
 
-        when(resp.isSuccessful()).thenReturn(false);
+        when(resp.statusCode()).thenReturn(400);
+        when(resp.body()).thenReturn("{\"error\": \"Bad Request\"}");
 
-        jelp.search("sushi", "Irvine, CA");
+        assertThrows(IllegalArgumentException.class, () -> {
+            jelp.search("sushi", "Irvine, CA");
+        });
     }
 
     @Test
     public void business() throws Exception {
+        @SuppressWarnings("unchecked")
+        HttpResponse<String> resp = mock(HttpResponse.class);
+        when(api.business(anyString())).thenReturn(resp);
 
-        Response resp = mock(Response.class);
-        when(api.business(Mockito.anyString())).thenReturn(resp);
+        when(resp.statusCode()).thenReturn(200);
 
-        when(resp.isSuccessful()).thenReturn(true);
+        String exampleResponse = IOUtils.toString(
+                this.getClass().getResourceAsStream("/example_business.json"),
+                StandardCharsets.UTF_8);
+        when(resp.body()).thenReturn(exampleResponse);
 
-        String exampleResponse = IOUtils.toString(this.getClass().getResourceAsStream("/example_business.json"));
-        when(resp.getBody()).thenReturn(exampleResponse);
-
-        Business business = jelp.business("yelp-san-francisco");
-        assertThat(business.getDisplay_phone(), is("+1-415-677-9744"));
+        Business business = jelp.business("urban-curry-san-francisco");
+        assertEquals("+1-415-677-9744", business.getDisplay_phone());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void business_unsuccessful() {
-        Response resp = mock(Response.class);
-        when(api.search(Mockito.anyString(), Mockito.anyString())).thenReturn(resp);
+    @Test
+    public void business_unsuccessful() throws Exception {
+        @SuppressWarnings("unchecked")
+        HttpResponse<String> resp = mock(HttpResponse.class);
+        when(api.business(anyString())).thenReturn(resp);
 
-        when(resp.isSuccessful()).thenReturn(false);
+        when(resp.statusCode()).thenReturn(404);
+        when(resp.body()).thenReturn("{\"error\": \"Not Found\"}");
 
-        jelp.search("sushi", "Irvine, CA");
+        assertThrows(IllegalArgumentException.class, () -> {
+            jelp.business("non-existent-business");
+        });
     }
 }

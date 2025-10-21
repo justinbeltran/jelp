@@ -1,22 +1,19 @@
 package com.justinbeltran.jelp.model;
 
-public class Coordinate {
-    private Number latitude;
-    private Number longitude;
+/**
+ * Represents geographic coordinates (latitude and longitude)
+ *
+ * @param latitude The latitude coordinate
+ * @param longitude The longitude coordinate
+ */
+public record Coordinate(Double latitude, Double longitude) {
 
-    public Number getLatitude() {
-        return this.latitude;
+    // Backward compatibility getters with old naming
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setLatitude(Number latitude) {
-        this.latitude = latitude;
-    }
-
-    public Number getLongitude() {
-        return this.longitude;
-    }
-
-    public void setLongitude(Number longitude) {
-        this.longitude = longitude;
+    public Double getLongitude() {
+        return longitude;
     }
 }

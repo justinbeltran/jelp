@@ -1,22 +1,19 @@
 package com.justinbeltran.jelp.model;
 
-public class Center {
-    private Number latitude;
-    private Number longitude;
+/**
+ * Represents the center point of a geographic region
+ *
+ * @param latitude The latitude of the center point
+ * @param longitude The longitude of the center point
+ */
+public record Center(Double latitude, Double longitude) {
 
-    public Number getLatitude() {
-        return this.latitude;
+    // Backward compatibility getters
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setLatitude(Number latitude) {
-        this.latitude = latitude;
-    }
-
-    public Number getLongitude() {
-        return this.longitude;
-    }
-
-    public void setLongitude(Number longitude) {
-        this.longitude = longitude;
+    public Double getLongitude() {
+        return longitude;
     }
 }

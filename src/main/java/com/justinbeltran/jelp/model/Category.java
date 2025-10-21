@@ -1,17 +1,20 @@
 package com.justinbeltran.jelp.model;
 
-import java.util.List;
+/**
+ * Represents a business category
+ * Yelp v3 uses objects with alias and title instead of nested arrays
+ *
+ * @param alias The category identifier/alias (e.g., "sushi", "japanese")
+ * @param title The human-readable category name (e.g., "Sushi Bars", "Japanese")
+ */
+public record Category(String alias, String title) {
 
-public class Category {
-
-    private List<String> category;
-
-    public List<String> getCategory() {
-        return category;
+    // Backward compatibility getters
+    public String getAlias() {
+        return alias;
     }
 
-    public void setCategory(List<String> category) {
-        this.category = category;
+    public String getTitle() {
+        return title;
     }
-
 }
