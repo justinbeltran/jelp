@@ -1,22 +1,19 @@
 package com.justinbeltran.jelp.model;
 
-public class Span {
-    private Number latitude_delta;
-    private Number longitude_delta;
+/**
+ * Represents the span (dimensions) of a geographic region
+ *
+ * @param latitude_delta The latitude span
+ * @param longitude_delta The longitude span
+ */
+public record Span(Double latitude_delta, Double longitude_delta) {
 
-    public Number getLatitude_delta() {
-        return this.latitude_delta;
+    // Backward compatibility getters
+    public Double getLatitude_delta() {
+        return latitude_delta;
     }
 
-    public void setLatitude_delta(Number latitude_delta) {
-        this.latitude_delta = latitude_delta;
-    }
-
-    public Number getLongitude_delta() {
-        return this.longitude_delta;
-    }
-
-    public void setLongitude_delta(Number longitude_delta) {
-        this.longitude_delta = longitude_delta;
+    public Double getLongitude_delta() {
+        return longitude_delta;
     }
 }

@@ -1,60 +1,101 @@
 package com.justinbeltran.jelp;
 
-import org.scribe.builder.ServiceBuilder;
-import org.scribe.model.OAuthRequest;
-import org.scribe.model.Response;
-import org.scribe.model.Token;
-import org.scribe.model.Verb;
-import org.scribe.oauth.OAuthService;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 
 /**
- * Wrapper for Yelp v2 API that does OAuth authentication
- * 
- * Based after Java Yelp example
- * https://github.com/Yelp/yelp-api/blob/master/v2/java/YelpApi2.java
- * 
+ * Wrapper for Yelp Fusion API v3 that handles HTTP requests with Bearer token authentication
+ *
  * @author justin
- * 
  */
 public class Api {
 
-    private static final String SEARCH_URL = "http://api.yelp.com/v2/search";
-    private static final String BASE_BUSINESS_URL = "http://api.yelp.com/v2/business";
+    private static final String API_BASE_URL = "https://api.yelp.com/v3";
+    private static final String SEARCH_ENDPOINT = "/businesses/search";
+    private static final String BUSINESS_ENDPOINT = "/businesses";
 
-    private OAuthService oauthService;
-    private Token token;
+    private final HttpClient httpClient;
+    private final String apiKey;
 
-    public Api(String consumerKey, String consumerSecret, String token, String tokenSecret) {
-        this.oauthService = new ServiceBuilder().provider(YelpV2Provider.class).apiKey(consumerKey).apiSecret(consumerSecret).build();
-        this.token = new Token(token, tokenSecret);
+    /**
+     * Creates a new API client with the provided API key
+     *
+     * @param apiKey Your Yelp Fusion API key
+     */
+    public Api(String apiKey) {
+        if (apiKey == null || apiKey.isBlank()) {
+            throw new IllegalArgumentException("API key cannot be null or empty");
+        }
+        this.apiKey = apiKey;
+        this.httpClient = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(10))
+                .build();
     }
 
     /**
      * Returns search results for a specific search term and location
-     * 
-     * @param searchTerm
-     * @param location
-     * @return
+     *
+     * @param searchTerm The search term (e.g., "sushi", "pizza")
+     * @param location The location to search in (e.g., "Irvine, CA")
+     * @return HttpResponse containing the search results
+     * @throws IOException If an I/O error occurs
+     * @throws InterruptedException If the request is interrupted
      */
-    public Response search(String searchTerm, String location) {
-        OAuthRequest request = new OAuthRequest(Verb.GET, SEARCH_URL);
-        request.addQuerystringParameter("term", searchTerm);
-        request.addQuerystringParameter("location", location);
-        oauthService.signRequest(token, request);
-        return request.send();
+    public HttpResponse<String> search(String searchTerm, String location) throws IOException, InterruptedException {
+        var queryParams = String.format("?term=%s&location=%s",
+                encodeValue(searchTerm),
+                encodeValue(location));
+
+        var uri = URI.create(API_BASE_URL + SEARCH_ENDPOINT + queryParams);
+
+        var request = HttpRequest.newBuilder()
+                .uri(uri)
+                .header("Authorization", "Bearer " + apiKey)
+                .header("Accept", "application/json")
+                .GET()
+                .build();
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
     /**
-     * Returns info for a business with a specific id
-     * 
-     * 
-     * @param id
-     * @return
+     * Returns detailed information for a business with a specific id
+     *
+     * @param id The business ID
+     * @return HttpResponse containing the business details
+     * @throws IOException If an I/O error occurs
+     * @throws InterruptedException If the request is interrupted
      */
-    public Response business(String id) {
-        OAuthRequest request = new OAuthRequest(Verb.GET, BASE_BUSINESS_URL + "/" + id);
-        oauthService.signRequest(token, request);
-        return request.send();
+    public HttpResponse<String> business(String id) throws IOException, InterruptedException {
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("Business ID cannot be null or empty");
+        }
+
+        var uri = URI.create(API_BASE_URL + BUSINESS_ENDPOINT + "/" + id);
+
+        var request = HttpRequest.newBuilder()
+                .uri(uri)
+                .header("Authorization", "Bearer " + apiKey)
+                .header("Accept", "application/json")
+                .GET()
+                .build();
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
+    /**
+     * URL-encodes a value for use in query parameters
+     *
+     * @param value The value to encode
+     * @return The URL-encoded value
+     */
+    private String encodeValue(String value) {
+        return URLEncoder.encode(value, StandardCharsets.UTF_8);
+    }
 }

@@ -2,77 +2,88 @@ package com.justinbeltran.jelp.model;
 
 import java.util.List;
 
-public class Location {
-    private List<String> address;
-    private String city;
-    private Coordinate coordinate;
-    private String country_code;
-    private List<String> display_address;
-    private Number geo_accuracy;
-    private String postal_code;
-    private String state_code;
+/**
+ * Represents a business location with address and coordinates
+ *
+ * @param address Address lines (street, etc.)
+ * @param city City name
+ * @param coordinate Geographic coordinates (may be null in v3, as coordinates can be at business level)
+ * @param country_code Country code (e.g., "US")
+ * @param display_address Formatted address for display
+ * @param geo_accuracy Geographic accuracy (deprecated in v3)
+ * @param postal_code Postal/ZIP code
+ * @param state_code State/province code (e.g., "CA")
+ * @param cross_streets Cross streets information (v3)
+ * @param address1 Primary address line (v3)
+ * @param address2 Secondary address line (v3)
+ * @param address3 Tertiary address line (v3)
+ * @param zip_code ZIP code (v3, alternative to postal_code)
+ */
+public record Location(
+        List<String> address,
+        String city,
+        Coordinate coordinate,
+        String country_code,
+        List<String> display_address,
+        Integer geo_accuracy,
+        String postal_code,
+        String state_code,
+        String cross_streets,
+        String address1,
+        String address2,
+        String address3,
+        String zip_code) {
 
+    // Backward compatibility getters
     public List<String> getAddress() {
-        return this.address;
-    }
-
-    public void setAddress(List<String> address) {
-        this.address = address;
+        return address;
     }
 
     public String getCity() {
-        return this.city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
+        return city;
     }
 
     public Coordinate getCoordinate() {
-        return this.coordinate;
-    }
-
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
+        return coordinate;
     }
 
     public String getCountry_code() {
-        return this.country_code;
-    }
-
-    public void setCountry_code(String country_code) {
-        this.country_code = country_code;
+        return country_code;
     }
 
     public List<String> getDisplay_address() {
-        return this.display_address;
+        return display_address;
     }
 
-    public void setDisplay_address(List<String> display_address) {
-        this.display_address = display_address;
-    }
-
-    public Number getGeo_accuracy() {
-        return this.geo_accuracy;
-    }
-
-    public void setGeo_accuracy(Number geo_accuracy) {
-        this.geo_accuracy = geo_accuracy;
+    public Integer getGeo_accuracy() {
+        return geo_accuracy;
     }
 
     public String getPostal_code() {
-        return this.postal_code;
-    }
-
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
+        return postal_code != null ? postal_code : zip_code;
     }
 
     public String getState_code() {
-        return this.state_code;
+        return state_code;
     }
 
-    public void setState_code(String state_code) {
-        this.state_code = state_code;
+    public String getCross_streets() {
+        return cross_streets;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public String getAddress3() {
+        return address3;
+    }
+
+    public String getZip_code() {
+        return zip_code;
     }
 }
